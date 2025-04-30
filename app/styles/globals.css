@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-800 overflow-x-hidden;
+  }
+  
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white px-5 py-2.5 font-semibold transition-all hover:bg-pink-600;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-black px-5 py-2.5 font-semibold transition-all hover:bg-yellow-400;
+  }
+}
+
+/* Ensure smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Diagonal clip path for hero section */
+.clip-diagonal {
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
