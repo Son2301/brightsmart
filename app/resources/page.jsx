@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -35,7 +37,7 @@ export default function ResourcesPage() {
       slug: "event-planning-timeline"
     }
   ];
-  
+
   // Free downloadable resources
   const freeResources = [
     {
@@ -81,7 +83,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Blog Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -92,13 +94,13 @@ export default function ResourcesPage() {
                 Real-world advice for event planners, marketers and speakers.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
               {featuredPosts.map((post) => (
-                <Link 
-                  href={`/resources/blog/${post.slug}`} 
+                <div
                   key={post.id}
-                  className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+                  onClick={() => alert('Blog post coming soon!')}
+                  className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
                 >
                   <div className="relative h-48 bg-gray-200">
                     <div className="absolute inset-0 flex items-center justify-center text-gray-500">
@@ -117,25 +119,25 @@ export default function ResourcesPage() {
                     <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{post.title}</h3>
                     <p className="text-gray-600">{post.excerpt}</p>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
-            
+
             <div className="text-center">
-              <Link 
-                href="/resources/blog" 
+              <button
+                onClick={() => alert('Blog feature coming soon!')}
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors"
               >
                 Explore All Event Planning Tips
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Free Downloads Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -146,34 +148,34 @@ export default function ResourcesPage() {
                 Helpful tools for planning and running standout events.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {freeResources.map((resource) => (
                 <div key={resource.id} className="bg-white rounded-lg shadow p-6 flex flex-col h-full">
                   <div className="text-4xl mb-4">{resource.icon}</div>
                   <h3 className="text-xl font-bold mb-3">{resource.title}</h3>
                   <p className="text-gray-600 mb-6 flex-grow">{resource.description}</p>
-                  <Link 
-                    href={`/resources/free-resources/${resource.downloadSlug}`}
+                  <button
+                    onClick={() => alert('Resource download feature coming soon!')}
                     className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors text-sm"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
                     Get This Resource
-                  </Link>
+                  </button>
                 </div>
               ))}
             </div>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
-              <Link 
-                href="/resources/free-resources/all"
+              <button
+                onClick={() => alert('Resources download feature coming soon!')}
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
               >
                 Get All Free Resources
-              </Link>
-              <Link 
+              </button>
+              <Link
                 href="/newsletter"
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors"
               >
@@ -183,7 +185,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Email Subscribe Banner */}
       <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4">
@@ -192,16 +194,16 @@ export default function ResourcesPage() {
             <p className="text-xl mb-8">
               Get the latest resources, event tips, and exclusive content delivered straight to your inbox.
             </p>
-            
+
             <form className="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
+              <input
+                type="email"
+                placeholder="Your email address"
                 className="flex-grow px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                 required
               />
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="bg-yellow-400 text-black px-6 py-3 font-semibold rounded-md hover:bg-yellow-300 transition-colors"
               >
                 Get Free Updates
