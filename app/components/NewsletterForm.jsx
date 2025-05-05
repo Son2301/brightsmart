@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaPaperPlane } from 'react-icons/fa';
 
 export default function NewsletterForm() {
@@ -8,6 +8,12 @@ export default function NewsletterForm() {
     const [name, setName] = useState('');
     const [status, setStatus] = useState('idle'); // idle, loading, success, error
     const [message, setMessage] = useState('');
+    const [isClient, setIsClient] = useState(false);
+
+    // This ensures hydration won't cause mismatches
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,6 +53,11 @@ export default function NewsletterForm() {
             setMessage('Connection error. Please try again later.');
         }
     };
+
+    // Return a simple placeholder during server rendering and initial client render
+    if (!isClient) {
+        return <div className="newsletter-form-loading h-24"></div>;
+    }
 
     return (
         <div className="newsletter-form">
