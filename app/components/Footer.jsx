@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   return (
@@ -15,7 +16,7 @@ export default function Footer() {
               <p>Based in Melbourne. Available for bookings Australia-wide and virtually.</p>
             </div>
           </div>
-          
+
           {/* Navigation Column */}
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
@@ -27,7 +28,7 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-primary">Contact</Link></li>
             </ul>
           </div>
-          
+
           {/* Contact Column */}
           <div>
             <h3 className="text-xl font-bold mb-4">Contact</h3>
@@ -48,36 +49,24 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          
+
           {/* Newsletter Column */}
           <div>
             <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="mb-4">Subscribe for tips, resources and updates to enhance your events.</p>
-            <form className="space-y-3">
-              <div>
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary"
-                  required
-                />
-              </div>
-              <button 
-                type="submit" 
-                className="w-full bg-primary text-white font-medium py-2 rounded hover:bg-pink-600 transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-            <Link 
-              href="/contact" 
+            <p className="mb-4">Get My Monthly Mic Check — Tips, Tools + Stories from the Stage</p>
+
+            {/* Using our custom NewsletterForm component */}
+            <NewsletterForm />
+
+            <Link
+              href="/contact"
               className="bg-yellow-400 text-black font-semibold px-5 py-2 inline-block mt-6 hover:bg-yellow-300 transition-colors"
             >
-              BOOK YOUR FREE CALL
+              Book a Call with Joyce
             </Link>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-300 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} BrightSmart Media. All rights reserved.</p>
           <div className="mt-4 md:mt-0 space-x-6">

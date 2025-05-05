@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from 'react';
-import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaPaperPlane } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaPaperPlane, FaCalendarAlt, FaClock } from 'react-icons/fa';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 export default function ContactPage() {
   // State for booking form
@@ -22,6 +24,29 @@ export default function ContactPage() {
     message: ''
   });
 
+  // State for calendar and time selection
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
+  const [showTimeSlots, setShowTimeSlots] = useState(false);
+
+  // Available time slots - these could be fetched from an API
+  const timeSlots = [
+    '9:00 AM', '10:00 AM', '11:00 AM',
+    '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'
+  ];
+
+  // Handle date change
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    setShowTimeSlots(true);
+    setSelectedTime(null); // Reset time when date changes
+  };
+
+  // Handle time selection
+  const handleTimeSelect = (time) => {
+    setSelectedTime(time);
+  };
+
   // Handle booking form changes
   const handleBookingChange = (e) => {
     const { name, value } = e.target;
@@ -38,7 +63,12 @@ export default function ContactPage() {
   const handleBookingSubmit = (e) => {
     e.preventDefault();
     // Form submission logic will go here
-    console.log('Booking form submitted:', bookingForm);
+    const bookingDetails = {
+      ...bookingForm,
+      appointmentDate: selectedDate ? selectedDate.toDateString() : null,
+      appointmentTime: selectedTime
+    };
+    console.log('Booking form submitted:', bookingDetails);
     alert('Thank you for your inquiry! I aim to respond within 2 business days.');
     // Reset form
     setBookingForm({
@@ -50,6 +80,9 @@ export default function ContactPage() {
       budgetRange: '',
       contactMethod: 'email'
     });
+    setSelectedDate(null);
+    setSelectedTime(null);
+    setShowTimeSlots(false);
   };
 
   // Handle general inquiry form submission
@@ -66,6 +99,11 @@ export default function ContactPage() {
     });
   };
 
+  // Function to disable past dates
+  const tileDisabled = ({ date }) => {
+    return date < new Date(new Date().setHours(0, 0, 0, 0));
+  };
+
   return (
     <main className="bg-white">
       {/* Hero Section */}
@@ -79,7 +117,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-      
+
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Booking Form Section */}
@@ -88,7 +126,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold mb-3 text-gray-800">Let's bring your event to life.</h2>
               <div className="h-1 w-20 bg-primary"></div>
             </div>
-            
+
             <form onSubmit={handleBookingSubmit} className="space-y-6">
               {/* Basic Info Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -116,7 +154,7 @@ export default function ContactPage() {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email</label>
                 <input
@@ -129,7 +167,7 @@ export default function ContactPage() {
                   required
                 />
               </div>
-              
+
               {/* Service Type */}
               <div>
                 <label htmlFor="serviceType" className="block text-gray-700 font-medium mb-2">Type of Service</label>
@@ -150,7 +188,62 @@ export default function ContactPage() {
                   <option value="other">Other (please specify in details)</option>
                 </select>
               </div>
-              
+
+              {/* Calendar Booking Section */}
+              <div className="border border-gray-200 rounded-lg p-4">
+                <div className="flex items-center mb-4">
+                  <FaCalendarAlt className="text-primary mr-2" />
+                  <h3 className="text-xl font-semibold text-gray-800">Schedule a Discovery Call</h3>
+                </div>
+
+                <div className="mb-4">
+                  <p className="text-gray-600 text-sm mb-4">
+                    Select a date and time for us to discuss your event needs in detail.
+                  </p>
+
+                  <div className="calendar-container">
+                    <Calendar
+                      onChange={handleDateChange}
+                      value={selectedDate}
+                      tileDisabled={tileDisabled}
+                      className="w-full border-0 shadow-none"
+                    />
+                  </div>
+                </div>
+
+                {showTimeSlots && (
+                  <div className="mt-4">
+                    <div className="flex items-center mb-2">
+                      <FaClock className="text-primary mr-2" />
+                      <h4 className="font-medium text-gray-800">Available Time Slots</h4>
+                    </div>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-2">
+                      {timeSlots.map((time) => (
+                        <button
+                          key={time}
+                          type="button"
+                          className={`py-2 px-3 rounded-md border text-sm font-medium ${selectedTime === time
+                              ? 'bg-primary text-white border-primary'
+                              : 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
+                            }`}
+                          onClick={() => handleTimeSelect(time)}
+                        >
+                          {time}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {selectedDate && selectedTime && (
+                  <div className="mt-4 p-3 bg-green-50 border border-green-100 rounded-md">
+                    <p className="text-green-800 font-medium text-sm">
+                      You selected: {selectedDate.toDateString()} at {selectedTime}
+                    </p>
+                  </div>
+                )}
+              </div>
+
               {/* Event Details */}
               <div>
                 <label htmlFor="eventDetails" className="block text-gray-700 font-medium mb-2">Event Details</label>
@@ -165,7 +258,7 @@ export default function ContactPage() {
                   required
                 ></textarea>
               </div>
-              
+
               {/* Budget Range */}
               <div>
                 <label htmlFor="budgetRange" className="block text-gray-700 font-medium mb-2">Budget Range</label>
@@ -185,7 +278,7 @@ export default function ContactPage() {
                   <option value="not-sure">Not sure yet</option>
                 </select>
               </div>
-              
+
               {/* Preferred Contact Method */}
               <div>
                 <label className="block text-gray-700 font-medium mb-2">Preferred Contact Method</label>
@@ -214,7 +307,7 @@ export default function ContactPage() {
                   </label>
                 </div>
               </div>
-              
+
               {/* Submit Button */}
               <div>
                 <button
@@ -222,7 +315,7 @@ export default function ContactPage() {
                   className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-pink-600 transition-colors flex items-center justify-center"
                 >
                   <FaPaperPlane className="mr-2" />
-                  Start Your Event Planning
+                  Let's Talk About Your Event
                 </button>
                 <p className="text-gray-600 text-sm mt-3 text-center">
                   I aim to respond within 2 business days.
@@ -230,7 +323,7 @@ export default function ContactPage() {
               </div>
             </form>
           </section>
-          
+
           {/* General Inquiries Section */}
           <section>
             <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
@@ -238,11 +331,11 @@ export default function ContactPage() {
                 <h2 className="text-3xl font-bold mb-3 text-gray-800">Got a quick question?</h2>
                 <div className="h-1 w-20 bg-primary"></div>
               </div>
-              
+
               <p className="text-gray-600 mb-6">
                 I'd love to hear from you. Feel free to reach out via the form or email.
               </p>
-              
+
               <form onSubmit={handleInquirySubmit} className="space-y-4">
                 <div>
                   <label htmlFor="inquiry-name" className="block text-gray-700 font-medium mb-2">Name</label>
@@ -256,7 +349,7 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="inquiry-email" className="block text-gray-700 font-medium mb-2">Email</label>
                   <input
@@ -269,7 +362,7 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="inquiry-message" className="block text-gray-700 font-medium mb-2">Message</label>
                   <textarea
@@ -282,7 +375,7 @@ export default function ContactPage() {
                     required
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-gray-800 text-white font-semibold py-3 px-6 rounded-md hover:bg-gray-700 transition-colors"
@@ -291,11 +384,11 @@ export default function ContactPage() {
                 </button>
               </form>
             </div>
-            
+
             {/* Direct Contact Info */}
             <div className="bg-gray-50 rounded-xl p-8">
               <h3 className="text-xl font-bold mb-4 text-gray-800">Direct Contact</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start">
                   <FaPaperPlane className="text-primary mt-1 mr-3" />
@@ -304,7 +397,7 @@ export default function ContactPage() {
                     <a href="mailto:joyce@brightsmart.com.au" className="text-primary hover:underline">joyce@brightsmart.com.au</a>
                   </div>
                 </div>
-                
+
                 <div>
                   <p className="font-medium mb-2">Connect on Social</p>
                   <div className="flex space-x-4">
@@ -327,6 +420,39 @@ export default function ContactPage() {
           </section>
         </div>
       </div>
+
+      {/* Add custom styles for the calendar */}
+      <style jsx global>{`
+        .react-calendar {
+          width: 100%;
+          max-width: 100%;
+          background: white;
+          border: none;
+          font-family: inherit;
+          line-height: 1.125em;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        .react-calendar__tile--active {
+          background: var(--color-primary, #f06292);
+          color: white;
+        }
+        .react-calendar__tile--active:enabled:hover,
+        .react-calendar__tile--active:enabled:focus {
+          background: var(--color-primary-dark, #ec407a);
+        }
+        .react-calendar__tile:disabled {
+          background-color: #f0f0f0;
+          color: #ccc;
+        }
+        .react-calendar button {
+          margin: 0;
+          border: 0;
+          outline: none;
+        }
+        .react-calendar button:enabled:hover {
+          cursor: pointer;
+        }
+      `}</style>
     </main>
   );
 }
