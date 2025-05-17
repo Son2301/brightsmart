@@ -218,7 +218,55 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Blog Section */}
+      {/* Free Downloads Section - Moved above Blog section to prioritize */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Free Downloads</h2>
+              <p className="text-xl text-gray-600">
+                Helpful tools for planning and running standout events.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {freeResources.map((resource) => (
+                <div key={resource.id} className="bg-white rounded-lg shadow p-6 flex flex-col h-full">
+                  <div className="text-4xl mb-4">{resource.icon}</div>
+                  <h3 className="text-xl font-bold mb-3">{resource.title}</h3>
+                  <p className="text-gray-600 mb-6 flex-grow">{resource.description}</p>
+                  <button
+                    onClick={() => alert('Resource download feature coming soon!')}
+                    className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors text-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Get This Resource
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              <button
+                onClick={() => alert('Resources download feature coming soon!')}
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+              >
+                Get All Free Resources
+              </button>
+              <button
+                onClick={() => setIsNewsletterOpen(true)}
+                className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors"
+              >
+                Subscribe for Latest Tips
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section - Moved below Free Downloads section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
@@ -272,55 +320,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Free Downloads Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Free Downloads</h2>
-              <p className="text-xl text-gray-600">
-                Helpful tools for planning and running standout events.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {freeResources.map((resource) => (
-                <div key={resource.id} className="bg-white rounded-lg shadow p-6 flex flex-col h-full">
-                  <div className="text-4xl mb-4">{resource.icon}</div>
-                  <h3 className="text-xl font-bold mb-3">{resource.title}</h3>
-                  <p className="text-gray-600 mb-6 flex-grow">{resource.description}</p>
-                  <button
-                    onClick={() => alert('Resource download feature coming soon!')}
-                    className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors text-sm"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Get This Resource
-                  </button>
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              <button
-                onClick={() => alert('Resources download feature coming soon!')}
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
-              >
-                Get All Free Resources
-              </button>
-              <button
-                onClick={() => setIsNewsletterOpen(true)}
-                className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors"
-              >
-                Subscribe for Latest Tips
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter CTA Section - Simplified version that opens the popup */}
+      {/* Newsletter CTA Section */}
       <section className="py-12 bg-primary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
