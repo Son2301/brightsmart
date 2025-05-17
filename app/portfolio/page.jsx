@@ -6,7 +6,7 @@ export default function PortfolioPage() {
     {
       id: 1,
       title: "Past Events",
-      description: "Explore my experience across corporate, government, and industry events.",
+      description: "Explore my experience across corporate, government and industry events.",
       image: "/images/portfolio/past-events-cover.jpg", // Placeholder
       link: "/portfolio/past-events",
       imagePlaceholder: "Past Events Image"
@@ -14,7 +14,7 @@ export default function PortfolioPage() {
     {
       id: 2,
       title: "Testimonials",
-      description: "Hear what clients and event organizers say about working with me.",
+      description: "Hear what clients and event organisers say about working with me.",
       image: "/images/portfolio/testimonials-cover.jpg", // Placeholder
       link: "/portfolio/testimonials",
       imagePlaceholder: "Testimonials Image"
@@ -76,19 +76,19 @@ export default function PortfolioPage() {
             <span className="text-primary font-semibold">PORTFOLIO</span>
             <h1 className="text-4xl md:text-5xl font-bold my-4">Experience That Speaks Volumes</h1>
             <p className="text-xl font-light mb-6">
-              Explore my past events, client testimonials, and resources for event organizers.
+              Explore my past events, client testimonials and resources for event organisers.
             </p>
           </div>
         </div>
       </section>
-      
+
       {/* Portfolio Sections */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {portfolioSections.map((section) => (
-              <Link 
-                key={section.id} 
+              <Link
+                key={section.id}
                 href={section.link}
                 className="group block overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
@@ -118,12 +118,12 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Trusted By Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
           <h3 className="text-center text-sm uppercase tracking-wider text-gray-500 mb-8">Trusted By</h3>
-          
+
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
             {organizations.map((org) => (
               <div key={org.id} className="w-32 md:w-40 h-16 relative flex items-center justify-center">
@@ -131,7 +131,7 @@ export default function PortfolioPage() {
                 <div className="w-full h-12 bg-gray-200 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
                   <span className="text-xs text-gray-500">{org.name}</span>
                 </div>
-                
+
                 {/* When you have the logos, uncomment and use this: */}
                 {/* <Image
                   src={org.logoPath}
@@ -145,7 +145,7 @@ export default function PortfolioPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-primary/10">
         <div className="container mx-auto px-4">
@@ -154,7 +154,7 @@ export default function PortfolioPage() {
             <p className="text-lg mb-8">
               Let's discuss how I can help bring your vision to life and create an exceptional experience for your audience.
             </p>
-            
+
             <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
               Get In Touch
             </Link>

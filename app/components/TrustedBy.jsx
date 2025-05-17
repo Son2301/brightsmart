@@ -44,7 +44,7 @@ export default function TrustedBy() {
     <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         <h3 className="text-center text-2xl font-semibold text-gray-700 mb-2">Trusted By</h3>
-        <p className="text-center text-gray-500 mb-8">Organizations who have collaborated with us</p>
+        <p className="text-center text-gray-500 mb-8">Organisations who have collaborated with us</p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 place-items-center max-w-6xl mx-auto">
           {organizations.map((org) => (

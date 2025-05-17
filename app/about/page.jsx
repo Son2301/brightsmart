@@ -53,7 +53,7 @@ export default function About() {
     },
     {
       id: 3,
-      quote: "Working with Joyce made our planning process so much easier. Her experience and calm demeanor helped us navigate unexpected challenges with grace.",
+      quote: "Working with Joyce made our planning process so much easier. Her experience and calm demeanour helped us navigate unexpected challenges with grace.",
       author: "Emma Rodriguez",
       position: "Creative Director, Open House Melbourne"
     }
@@ -66,7 +66,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              I make events feel like conversations, not a schedule of death-by-powerpoint presentations.
+              I make events feel like conversations, not a schedule of death-by-PowerPoint presentations.
             </h1>
             <div className="w-24 h-1 bg-primary mx-auto my-8"></div>
           </div>
@@ -103,7 +103,7 @@ export default function About() {
               </p>
 
               <p className="text-lg mb-6">
-                In a white-male dominated space, I bring a fresh perspective as a woman, migrant, and person of colour owning a media company. This unique lens allows me to create inclusive experiences that resonate with everyone in the room.
+                In a white-male dominated space, I bring a fresh perspective as a woman, migrant and person of colour owning a media company. This unique lens allows me to create inclusive experiences that resonate with everyone in the room.
               </p>
 
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
@@ -166,7 +166,7 @@ export default function About() {
                 <span className="text-sm text-gray-500">Present</span>
                 <h3 className="text-xl font-bold mb-2">Professional MC & Speaker</h3>
                 <p className="text-gray-600">
-                  Now dedicated to helping events shine through professional MC services, speaking engagements, and workshop facilitation.
+                  Now dedicated to helping events shine through professional MC services, speaking engagements and workshop facilitation.
                 </p>
               </div>
             </div>
@@ -230,7 +230,7 @@ export default function About() {
                 <ul className="space-y-2">
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
-                    <span>Local Government & Community Organizations</span>
+                    <span>Local Government & Community Organisations</span>
                   </li>
                   <li className="flex items-center">
                     <span className="w-2 h-2 bg-primary rounded-full mr-2"></span>
@@ -286,7 +286,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <span className="text-primary font-semibold">CLIENT LOVE</span>
-            <h2 className="text-3xl font-bold mt-2 mb-4">What Event Organizers Say</h2>
+            <h2 className="text-3xl font-bold mt-2 mb-4">What Event Organisers Say</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

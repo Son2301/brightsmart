@@ -246,7 +246,7 @@ export default function ContactPage() {
                   Let's Talk About Your Event
                 </button>
                 <p className="text-gray-600 text-sm mt-3 text-center">
-                  I aim to respond within 2 business days.
+                  I aim to respond within two business days.
                 </p>
               </form>
             </div>

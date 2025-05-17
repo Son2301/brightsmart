@@ -28,7 +28,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl font-light mt-6 mb-8 max-w-2xl text-white">
-            Helping brilliant events feel more connected, inclusive, and human – with a mic in hand and 15+ years of media experience.
+            Helping brilliant events feel more connected, inclusive and human – with a mic in hand and 15+ years of media experience.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
