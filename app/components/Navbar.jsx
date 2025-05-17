@@ -50,7 +50,8 @@ export default function Navbar() {
                 </div>
 
                 {activeDropdown === 'services' && (
-                  <div className="absolute top-full left-0 mt-0 pt-2 w-48 z-10">
+                  <div className="absolute top-full left-0 mt-0 w-48 z-10">
+                    <div className="absolute h-2 w-full top-[-8px]"></div>
                     <div className="bg-white rounded shadow-md py-2 w-full">
                       <Link
                         href="/services/mc-services"
@@ -87,7 +88,8 @@ export default function Navbar() {
                 </div>
 
                 {activeDropdown === 'portfolio' && (
-                  <div className="absolute top-full left-0 mt-0 pt-2 w-48 z-10">
+                  <div className="absolute top-full left-0 mt-0 w-48 z-10">
+                    <div className="absolute h-2 w-full top-[-8px]"></div>
                     <div className="bg-white rounded shadow-md py-2 w-full">
                       <Link
                         href="/portfolio/past-events"
