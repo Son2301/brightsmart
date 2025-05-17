@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaPaperPlane, FaCalendarAlt } from 'react-icons/fa';
-import Cal, { getCalApi } from "@calcom/embed-react";
+import { useState } from 'react';
+import { FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaPaperPlane } from 'react-icons/fa';
 
 export default function ContactPage() {
   // State for booking form
@@ -22,21 +21,6 @@ export default function ContactPage() {
     email: '',
     message: ''
   });
-
-  // Initialize Cal.com
-  useEffect(() => {
-    // Only run on client-side
-    if (typeof window !== 'undefined') {
-      (async function () {
-        try {
-          const cal = await getCalApi({ "namespace": "30min" });
-          cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
-        } catch (error) {
-          console.error("Failed to initialize Cal.com:", error);
-        }
-      })();
-    }
-  }, []);
 
   // Handle booking form changes
   const handleBookingChange = (e) => {
@@ -127,7 +111,7 @@ export default function ContactPage() {
 
                 {/* Organization field */}
                 <div>
-                  <label htmlFor="organization" className="block text-gray-700 font-medium mb-2">Organization</label>
+                  <label htmlFor="organization" className="block text-gray-700 font-medium mb-2">Organisation</label>
                   <input
                     type="text"
                     id="organization"
