@@ -63,7 +63,7 @@ export default function MediaKitPage() {
       thumbnailPlaceholder: "Workshop Photo Preview",
       featured: false
     },
-    
+
     // Biographies
     {
       id: 5,
@@ -104,7 +104,7 @@ export default function MediaKitPage() {
       thumbnailPlaceholder: "Intro Preview",
       featured: false
     },
-    
+
     // Logos and Brand
     {
       id: 8,
@@ -168,7 +168,7 @@ export default function MediaKitPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Usage Guidelines Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -194,14 +194,14 @@ export default function MediaKitPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Media Categories Filter */}
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
             {mediaCategories.map((category) => (
-              <button 
-                key={category.id} 
+              <button
+                key={category.id}
                 className="px-6 py-2 rounded-full bg-white border border-gray-200 hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
               >
                 {category.name}
@@ -210,12 +210,12 @@ export default function MediaKitPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Resources */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Featured Resources</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredResources.map((resource) => (
               <div key={resource.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow group">
@@ -232,7 +232,7 @@ export default function MediaKitPage() {
                     style={{ objectFit: 'cover' }}
                     className="transition-transform duration-500 group-hover:scale-105"
                   /> */}
-                  
+
                   {/* Category badge */}
                   <div className="absolute top-3 left-3">
                     <span className="px-3 py-1 text-xs font-medium bg-black/70 text-white rounded-full">
@@ -240,12 +240,12 @@ export default function MediaKitPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <div className="p-5">
                   <h3 className="text-lg font-bold mb-2">{resource.title}</h3>
                   <p className="text-gray-600 text-sm mb-4">{resource.description}</p>
-                  
+
                   {/* File info */}
                   <div className="flex flex-wrap gap-3 mb-5">
                     <span className="inline-flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
@@ -254,14 +254,14 @@ export default function MediaKitPage() {
                       </svg>
                       {resource.fileType}
                     </span>
-                    
+
                     <span className="inline-flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                       </svg>
                       {resource.fileSize}
                     </span>
-                    
+
                     {resource.dimensions && (
                       <span className="inline-flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
                         <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -270,7 +270,7 @@ export default function MediaKitPage() {
                         {resource.dimensions}
                       </span>
                     )}
-                    
+
                     {resource.pages && (
                       <span className="inline-flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
                         <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -279,7 +279,7 @@ export default function MediaKitPage() {
                         {resource.pages}
                       </span>
                     )}
-                    
+
                     {resource.formats && (
                       <span className="inline-flex items-center text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
                         <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -289,9 +289,9 @@ export default function MediaKitPage() {
                       </span>
                     )}
                   </div>
-                  
+
                   {/* Download button */}
-                  <a 
+                  <a
                     href={resource.downloadUrl}
                     className="block w-full py-3 text-center bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
                     download
@@ -304,12 +304,12 @@ export default function MediaKitPage() {
           </div>
         </div>
       </section>
-      
+
       {/* All Resources */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">All Resources</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {mediaResources.map((resource) => (
               <div key={resource.id} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
@@ -325,7 +325,7 @@ export default function MediaKitPage() {
                     fill
                     style={{ objectFit: 'cover' }}
                   /> */}
-                  
+
                   {/* Category badge */}
                   <div className="absolute top-2 right-2">
                     <span className="px-2 py-0.5 text-xs font-medium bg-black/70 text-white rounded-full">
@@ -333,14 +333,14 @@ export default function MediaKitPage() {
                     </span>
                   </div>
                 </div>
-                
+
                 {/* Content */}
                 <div className="p-4 flex-grow flex flex-col">
                   <h3 className="font-bold mb-1">{resource.title}</h3>
                   <p className="text-gray-600 text-sm mb-3 flex-grow">{resource.description}</p>
-                  
+
                   {/* Download button */}
-                  <a 
+                  <a
                     href={resource.downloadUrl}
                     className="block w-full py-2 text-center border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition-colors text-sm"
                     download
@@ -353,7 +353,7 @@ export default function MediaKitPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-primary/10">
         <div className="container mx-auto px-4">
@@ -362,7 +362,7 @@ export default function MediaKitPage() {
             <p className="text-lg mb-8">
               If you need custom materials or have specific requirements for your event or publication, please get in touch.
             </p>
-            
+
             <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
               Contact Me
             </Link>

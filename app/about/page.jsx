@@ -5,33 +5,33 @@ import { FiUser, FiHeart, FiMessageCircle, FiCheckCircle, FiBriefcase } from 're
 export default function About() {
   // Values with icons
   const values = [
-    { 
-      id: 1, 
-      name: 'Inclusivity', 
+    {
+      id: 1,
+      name: 'Inclusivity',
       icon: <FiHeart className="w-7 h-7" />,
       description: 'Creating spaces where everyone feels welcomed and represented'
     },
-    { 
-      id: 2, 
-      name: 'Empathy', 
+    {
+      id: 2,
+      name: 'Empathy',
       icon: <FiUser className="w-7 h-7" />,
       description: 'Understanding audience needs and reading the energy of the room'
     },
-    { 
-      id: 3, 
-      name: 'Clarity', 
+    {
+      id: 3,
+      name: 'Clarity',
       icon: <FiMessageCircle className="w-7 h-7" />,
       description: 'Communicating complex ideas with precision and accessibility'
     },
-    { 
-      id: 4, 
-      name: 'Highly Organised', 
+    {
+      id: 4,
+      name: 'Highly Organised',
       icon: <FiCheckCircle className="w-7 h-7" />,
       description: 'Meticulous planning ensuring smooth event execution'
     },
-    { 
-      id: 5, 
-      name: 'Professionalism', 
+    {
+      id: 5,
+      name: 'Professionalism',
       icon: <FiBriefcase className="w-7 h-7" />,
       description: 'Bringing media-trained excellence to every engagement'
     }
@@ -72,7 +72,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Introduction Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -91,21 +91,21 @@ export default function About() {
                 /> */}
               </div>
             </div>
-            
+
             <div>
               <span className="text-primary font-semibold">ABOUT ME</span>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 mt-2">
                 I'm Joyce, a speaker and MC who brings warmth, calm and a media insider's savvy to every stage.
               </h2>
-              
+
               <p className="text-lg mb-6">
                 As a woman of colour and founder of one of Australia's most-read family media brands, I know how to connect with diverse audiences—and help events truly shine.
               </p>
-              
+
               <p className="text-lg mb-6">
                 In a white-male dominated space, I bring a fresh perspective as a woman, migrant, and person of colour owning a media company. This unique lens allows me to create inclusive experiences that resonate with everyone in the room.
               </p>
-              
+
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
                 Schedule Your Free Call
               </Link>
@@ -113,7 +113,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Career Journey Timeline */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -124,7 +124,7 @@ export default function About() {
               My career path has equipped me with the perfect skill set to elevate your events.
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             {/* Timeline items */}
             <div className="relative border-l-2 border-primary pl-8 pb-8 ml-4">
@@ -137,7 +137,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            
+
             <div className="relative border-l-2 border-primary pl-8 pb-8 ml-4">
               <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px]"></div>
               <div className="mb-12">
@@ -148,7 +148,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            
+
             <div className="relative border-l-2 border-primary pl-8 pb-8 ml-4">
               <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px]"></div>
               <div className="mb-12">
@@ -159,7 +159,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            
+
             <div className="relative pl-8 ml-4">
               <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px]"></div>
               <div>
@@ -173,7 +173,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Values Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -184,9 +184,22 @@ export default function About() {
               These core principles guide my approach to making your event exceptional.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value) => (
+            {values.slice(0, 3).map((value) => (
+              <div key={value.id} className="p-6 border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-2">{value.name}</h3>
+                <p className="text-gray-600">{value.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom row with centered items */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:max-w-2xl md:mx-auto mt-8">
+            {values.slice(3).map((value) => (
               <div key={value.id} className="p-6 border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-full mb-4">
                   {value.icon}
@@ -198,7 +211,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Specialization Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -210,7 +223,7 @@ export default function About() {
                 I specialize in bringing my unique perspective to a variety of events and industries.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold mb-4 border-l-4 border-primary pl-3">Industries Served</h3>
@@ -237,7 +250,7 @@ export default function About() {
                   </li>
                 </ul>
               </div>
-              
+
               <div className="bg-white p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold mb-4 border-l-4 border-primary pl-3">Event Types</h3>
                 <ul className="space-y-2">
@@ -267,7 +280,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -275,7 +288,7 @@ export default function About() {
             <span className="text-primary font-semibold">CLIENT LOVE</span>
             <h2 className="text-3xl font-bold mt-2 mb-4">What Event Organizers Say</h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="bg-gray-50 p-8 rounded-lg">
@@ -290,7 +303,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Action Section with Speaker Sheet Download */}
       <section className="py-16 bg-primary/10">
         <div className="container mx-auto px-4">
@@ -299,12 +312,12 @@ export default function About() {
             <p className="text-lg mb-8">
               Download my speaker one-sheet or get in touch to discuss how I can help make your event truly shine.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/downloads/joyce-speaker-onesheet.pdf" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-white text-primary border-2 border-primary rounded-md hover:bg-primary/5 transition-colors">
                 Get My Speaker One-Sheet
               </Link>
-              
+
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
                 Start Planning Your Event
               </Link>
@@ -312,7 +325,7 @@ export default function About() {
           </div>
         </div>
       </section>
-      
+
       {/* Action Photos Grid */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -320,7 +333,7 @@ export default function About() {
             <span className="text-primary font-semibold">IN ACTION</span>
             <h2 className="text-3xl font-bold mt-2 mb-4">See Me On Stage</h2>
           </div>
-          
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1, 2, 3, 4].map((item) => (
               <div key={item} className="aspect-square bg-gray-200 rounded-lg overflow-hidden relative">

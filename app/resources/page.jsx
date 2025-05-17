@@ -1,9 +1,78 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import NewsletterPopup from '../components/NewsletterPopup';
 
 export default function ResourcesPage() {
+  // State for newsletter popup
+  const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+
+  // Media Kit Resources
+  const mediaKitResources = [
+    {
+      id: 1,
+      title: "Professional Headshot (Color)",
+      description: "High-resolution color headshot for event programs, websites, and promotional materials.",
+      category: "Photos",
+      fileType: "JPG",
+      fileSize: "5.2 MB",
+      dimensions: "3000 × 2000 px",
+      preview: "Headshot Preview"
+    },
+    {
+      id: 2,
+      title: "On-Stage Speaking Photo",
+      description: "Action shot from a recent keynote presentation, suitable for event promotion.",
+      category: "Photos",
+      fileType: "JPG",
+      fileSize: "7.1 MB",
+      dimensions: "4000 × 2667 px",
+      preview: "Speaking Photo Preview"
+    },
+    {
+      id: 3,
+      title: "Full Biography (500 words)",
+      description: "Comprehensive professional biography suitable for conference programs and detailed introductions.",
+      category: "Biographies",
+      fileType: "PDF",
+      fileSize: "320 KB",
+      dimensions: "1 page",
+      preview: "Full Bio Preview"
+    },
+    {
+      id: 4,
+      title: "Primary Logo (Full Color)",
+      description: "Official full-color logo for use on white or light backgrounds.",
+      category: "Logos & Brand",
+      fileType: "ZIP",
+      fileSize: "1.8 MB",
+      fileFormats: "AI, EPS, PNG, SVG",
+      preview: "Logo Preview"
+    },
+    {
+      id: 5,
+      title: "Introduction Script",
+      description: "Ready-to-use MC introduction script for event hosts to properly introduce me at your event.",
+      category: "Event Materials",
+      fileType: "DOCX",
+      fileSize: "78 KB",
+      dimensions: "1 page",
+      preview: "Script Preview"
+    },
+    {
+      id: 6,
+      title: "Speaking Topics Overview",
+      description: "Detailed descriptions of my signature talks with key takeaways for your audience.",
+      category: "Event Planning",
+      fileType: "PDF",
+      fileSize: "450 KB",
+      dimensions: "3 pages",
+      preview: "Topics Preview"
+    }
+  ];
+
   // Sample blog posts for the featured section
   const featuredPosts = [
     {
@@ -72,6 +141,12 @@ export default function ResourcesPage() {
 
   return (
     <main className="bg-white">
+      {/* Newsletter Popup */}
+      <NewsletterPopup
+        isOpen={isNewsletterOpen}
+        onClose={() => setIsNewsletterOpen(false)}
+      />
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-gray-900 to-black text-white">
         <div className="container mx-auto px-4">
@@ -84,8 +159,67 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* Blog Section */}
+      {/* Featured Resources / Media Kit Section */}
       <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Featured Resources</h2>
+              <p className="text-xl text-gray-600">
+                Download these resources to help promote your event
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+              {mediaKitResources.map((resource) => (
+                <div key={resource.id} className="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
+                  <div className="relative h-48 bg-gray-200 flex items-center justify-center text-gray-500">
+                    {resource.preview}
+                  </div>
+                  <div className="p-6">
+                    <div className="mb-2">
+                      <span className="inline-block px-3 py-1 text-xs font-semibold text-gray-700 bg-gray-200 rounded-full">
+                        {resource.category}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
+                    <p className="text-gray-600 mb-6">{resource.description}</p>
+                    <div className="flex flex-wrap gap-3 text-sm text-gray-500 mb-4">
+                      <div className="flex items-center">
+                        <span className="mr-1">{resource.fileType}</span>
+                      </div>
+                      {resource.fileSize && (
+                        <div className="flex items-center">
+                          <span className="mr-1">{resource.fileSize}</span>
+                        </div>
+                      )}
+                      {resource.dimensions && (
+                        <div className="flex items-center">
+                          <span className="mr-1">{resource.dimensions}</span>
+                        </div>
+                      )}
+                      {resource.fileFormats && (
+                        <div className="flex items-center">
+                          <span className="mr-1">{resource.fileFormats}</span>
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => alert('Resource download coming soon!')}
+                      className="w-full inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+                    >
+                      Download
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -139,7 +273,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Free Downloads Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
@@ -175,43 +309,31 @@ export default function ResourcesPage() {
               >
                 Get All Free Resources
               </button>
-              <Link
-                href="/newsletter"
+              <button
+                onClick={() => setIsNewsletterOpen(true)}
                 className="inline-flex items-center justify-center px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors"
               >
                 Subscribe for Latest Tips
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Email Subscribe Banner */}
-      <section className="py-16 bg-primary text-white">
+      {/* Newsletter CTA Section - Simplified version that opens the popup */}
+      <section className="py-12 bg-primary/10">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-            <p className="text-xl mb-8">
-              Get the latest resources, event tips, and exclusive content delivered straight to your inbox.
+            <h2 className="text-2xl font-bold mb-4">Want to stay in the loop?</h2>
+            <p className="text-lg text-gray-700 mb-6">
+              Join my newsletter for exclusive resources and event planning insights.
             </p>
-
-            <form className="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-grow px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-yellow-400 text-black px-6 py-3 font-semibold rounded-md hover:bg-yellow-300 transition-colors"
-              >
-                Get Free Updates
-              </button>
-            </form>
-            <p className="text-sm mt-4 opacity-80">
-              I respect your privacy. Unsubscribe at any time.
-            </p>
+            <button
+              onClick={() => setIsNewsletterOpen(true)}
+              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-md hover:bg-pink-600 transition-colors"
+            >
+              Get Free Updates
+            </button>
           </div>
         </div>
       </section>

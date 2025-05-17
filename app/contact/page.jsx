@@ -296,56 +296,25 @@ export default function ContactPage() {
               Select a convenient time for us to discuss your event needs in detail.
             </p>
 
-            {/* Cal.com Calendar Booking Section - Maximized height */}
+            {/* TidyCal Calendar Booking Section */}
             <div className="cal-embed-container rounded-lg overflow-hidden border border-gray-100">
-              {/* Use client-side only rendering for Cal component */}
-              {typeof window !== 'undefined' && (
-                <Cal
-                  namespace="30min"
-                  calLink="nxson/30min"
-                  style={{ width: "100%", height: "auto", minHeight: "1200px", border: "none" }}
-                  config={{
-                    "layout": "month_view",
-                    "hideEventTypeDetails": false,
-                    "hideBranding": true
-                  }}
-                />
-              )}
+              <div className="tidycal-embed" data-path="joyce-watts/15-minute-meeting"></div>
+              <script src="https://asset-tidycal.b-cdn.net/js/embed.js" async></script>
             </div>
 
             {/* Add styling to help with responsiveness and expansion */}
             <style jsx global>{`
-              /* Fix for Cal.com embed responsive display */
+              /* Fix for TidyCal embed responsive display */
               .cal-embed-container {
                 height: 100%;
-                min-height: 1200px;
+                min-height: 800px;
                 display: flex;
                 flex-direction: column;
               }
               
-              .cal-embed-container iframe {
-                width: 100% !important;
-                height: 100% !important;
-                min-height: 1200px !important;
-                flex: 1;
-              }
-              
-              /* Fill available space */
-              .cal-embed-container > div {
-                height: 100%;
-                min-height: 1200px;
-              }
-              
-              /* Reduce excess whitespace */
-              .cal-embed-container div[data-backdrop-root="true"] {
-                overflow: hidden !important;
-              }
-              
               /* Full viewport height minus header space */
               @media screen and (min-height: 800px) {
-                .cal-embed-container,
-                .cal-embed-container iframe,
-                .cal-embed-container > div {
+                .cal-embed-container {
                   min-height: calc(100vh - 200px) !important;
                 }
               }
