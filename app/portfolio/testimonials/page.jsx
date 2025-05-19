@@ -140,7 +140,7 @@ export default function TestimonialsPage() {
         author: "Emma Thompson",
         title: "Events Director",
         company: "Mainstreet Australia",
-        image: "/images/testimonials/emma-thompson.jpg", // Placeholder path
+        image: "/images/Bright Smart Pics/Portfolio/Testimonials/photo-1512314889357-e157c22f938d.webp",
         imagePlaceholder: "E",
         featured: true,
         industry: "Events",
@@ -153,13 +153,13 @@ export default function TestimonialsPage() {
       }
     ]
   };
-  
+
   // Case studies data
   const caseStudies = [
     {
       id: "cs-1",
       organization: "Mainstreet Australia",
-      logo: "/logos/mainstreet-australia.png",
+      logo: "/images/clientLogos/Mainstreet-Australia-logo.png",
       logoPlaceholder: "Mainstreet Australia Logo",
       images: [
         "/images/case-studies/mainstreet-1.jpg",
@@ -179,7 +179,7 @@ export default function TestimonialsPage() {
     {
       id: "cs-2",
       organization: "Merri-bek City Council",
-      logo: "/logos/merri-bek-council.png",
+      logo: "/images/clientLogos/Merri-bek_logo.png",
       logoPlaceholder: "Merri-bek City Council Logo",
       images: [
         "/images/case-studies/merribek-1.jpg",
@@ -199,7 +199,7 @@ export default function TestimonialsPage() {
     {
       id: "cs-3",
       organization: "Open House Melbourne / City of Maribyrnong / Footscray Market",
-      logo: "/logos/open-house-melbourne.png",
+      logo: "/images/clientLogos/open-house.svg",
       logoPlaceholder: "Open House Melbourne Logo",
       images: [
         "/images/case-studies/footscray-1.jpg",
@@ -217,23 +217,23 @@ export default function TestimonialsPage() {
       }
     }
   ];
-  
+
   // Get all industries
   const industries = Object.keys(testimonialsByIndustry);
-  
+
   // Get featured testimonials for the showcase section
   const featuredTestimonials = Object.values(testimonialsByIndustry)
     .flat()
     .filter(testimonial => testimonial.featured)
     .slice(0, 3); // Take only 3 for the showcase
-    
+
   // Function to get random testimonial (not in featured) for the quote banner
   const getRandomTestimonial = () => {
     const allTestimonials = Object.values(testimonialsByIndustry).flat();
     const nonFeatured = allTestimonials.filter(t => !t.featured);
     return nonFeatured[Math.floor(Math.random() * nonFeatured.length)];
   };
-  
+
   const randomTestimonial = getRandomTestimonial();
 
   return (
@@ -255,7 +255,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Highlighted Testimonial */}
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
@@ -266,7 +266,7 @@ export default function TestimonialsPage() {
                   <path d="M10.722 6.417c-5.876 2.457-9.88 7.570-9.88 13.196 0 4.393 2.342 8.247 6.292 8.247 3.282 0 5.855-2.586 5.855-6.06 0-3.243-2.342-5.820-5.463-5.820-0.654 0-1.308 0.13-1.832 0.26 0.784-3.372 3.782-6.715 7.173-8.247l-2.146-1.576zM25.355 6.417c-5.876 2.457-9.88 7.570-9.88 13.196 0 4.393 2.342 8.247 6.292 8.247 3.282 0 5.855-2.586 5.855-6.06 0-3.243-2.342-5.820-5.463-5.820-0.654 0-1.308 0.13-1.832 0.26 0.784-3.372 3.782-6.715 7.173-8.247l-2.146-1.576z"></path>
                 </svg>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h2 className="text-2xl font-bold mb-6">Joyce helped us...</h2>
@@ -282,10 +282,15 @@ export default function TestimonialsPage() {
                       </li>
                     ))}
                   </ul>
-                  
+
                   <div className="mt-8 flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
-                      <div className="text-lg font-bold text-gray-500">{testimonialsByIndustry.Events[0].imagePlaceholder}</div>
+                    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4 overflow-hidden relative">
+                      <Image
+                        src={testimonialsByIndustry.Events[0].image}
+                        alt={testimonialsByIndustry.Events[0].author}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
                     </div>
                     <div>
                       <h4 className="font-bold">{testimonialsByIndustry.Events[0].author}</h4>
@@ -295,7 +300,7 @@ export default function TestimonialsPage() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="relative h-64 bg-gray-100 rounded-lg overflow-hidden hidden md:block">
                   <div className="absolute inset-0 flex items-center justify-center text-gray-400">
                     Event Photo
@@ -313,12 +318,12 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Testimonials Showcase */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Client Success Stories</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredTestimonials.map((testimonial) => (
               <div key={testimonial.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
@@ -332,18 +337,20 @@ export default function TestimonialsPage() {
 
                   {/* Quote */}
                   <blockquote className="text-lg mb-6">{testimonial.quote}</blockquote>
-                  
+
                   {/* Author Info */}
                   <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4 overflow-hidden">
-                      <div className="text-lg font-bold text-gray-500">{testimonial.imagePlaceholder}</div>
-                      {/* Uncomment when images are available */}
-                      {/* <Image
-                        src={testimonial.image}
-                        alt={testimonial.author}
-                        fill
-                        style={{ objectFit: 'cover' }}
-                      /> */}
+                    <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4 overflow-hidden relative">
+                      {testimonial.industry === "Events" ? (
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.author}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      ) : (
+                        <div className="text-lg font-bold text-gray-500">{testimonial.imagePlaceholder}</div>
+                      )}
                     </div>
                     <div>
                       <h4 className="font-bold">{testimonial.author}</h4>
@@ -357,7 +364,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Quote Banner */}
       <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-4">
@@ -371,8 +378,17 @@ export default function TestimonialsPage() {
                 </div>
                 <blockquote className="text-2xl md:text-3xl font-light italic mb-8">{randomTestimonial.quote}</blockquote>
                 <div className="flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4 overflow-hidden">
-                    <div className="text-lg font-bold">{randomTestimonial.imagePlaceholder}</div>
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center mr-4 overflow-hidden relative">
+                    {randomTestimonial.industry === "Events" ? (
+                      <Image
+                        src={randomTestimonial.image}
+                        alt={randomTestimonial.author}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    ) : (
+                      <div className="text-lg font-bold">{randomTestimonial.imagePlaceholder}</div>
+                    )}
                   </div>
                   <div className="text-left">
                     <h4 className="font-bold">{randomTestimonial.author}</h4>
@@ -384,7 +400,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Case Studies Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -392,7 +408,7 @@ export default function TestimonialsPage() {
           <p className="text-lg text-center text-gray-600 mb-12 max-w-3xl mx-auto">
             Explore detailed examples of how I've helped organizations achieve their goals through effective facilitation and event management.
           </p>
-          
+
           <div className="space-y-16">
             {caseStudies.map((study, index) => (
               <div key={study.id} className={`bg-white rounded-xl shadow-md overflow-hidden ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} md:flex`}>
@@ -411,24 +427,22 @@ export default function TestimonialsPage() {
                     /> */}
                   </div>
                 </div>
-                
+
                 {/* Content Section */}
                 <div className="md:w-3/5 p-6 md:p-8">
                   <div className="flex items-center mb-6">
                     <div className="h-12 w-36 bg-gray-200 relative flex items-center justify-center mr-4">
-                      <span className="text-xs text-gray-500">{study.logoPlaceholder}</span>
-                      {/* Uncomment when images are available */}
-                      {/* <Image 
-                        src={study.logo} 
-                        alt={study.organization} 
-                        width={144} 
-                        height={48} 
-                        style={{ objectFit: 'contain' }} 
-                      /> */}
+                      <Image
+                        src={study.logo}
+                        alt={study.organization}
+                        width={144}
+                        height={48}
+                        style={{ objectFit: 'contain' }}
+                      />
                     </div>
                     <h3 className="text-2xl font-bold">{study.organization}</h3>
                   </div>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <h4 className="font-bold text-primary mb-2">The Brief</h4>
@@ -439,12 +453,12 @@ export default function TestimonialsPage() {
                       <p className="text-gray-700">{study.challenge}</p>
                     </div>
                   </div>
-                  
+
                   <div className="mb-6">
                     <h4 className="font-bold text-primary mb-2">My Approach</h4>
                     <p className="text-gray-700">{study.approach}</p>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-bold text-primary mb-3">Results</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -472,25 +486,25 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials By Industry */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Testimonials By Industry</h2>
-          
+
           {/* Industry filter navigation */}
           <div className="mb-12 flex flex-wrap justify-center gap-4">
             {industries.map((industry) => (
-              <a 
-                key={industry} 
-                href={`#industry-${industry.toLowerCase().replace(' ', '-')}`} 
+              <a
+                key={industry}
+                href={`#industry-${industry.toLowerCase().replace(' ', '-')}`}
                 className="px-6 py-2 rounded-full bg-white border border-gray-200 hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50"
               >
                 {industry}
               </a>
             ))}
           </div>
-          
+
           {/* Testimonials by industry */}
           <div className="space-y-16">
             {industries.map((industry) => (
@@ -499,7 +513,7 @@ export default function TestimonialsPage() {
                   <span className="mr-4">{industry}</span>
                   <span className="h-px bg-gray-300 flex-grow"></span>
                 </h3>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   {testimonialsByIndustry[industry].map((testimonial) => (
                     <div key={testimonial.id} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow p-6">
@@ -509,21 +523,23 @@ export default function TestimonialsPage() {
                           <path d="M10.722 6.417c-5.876 2.457-9.88 7.570-9.88 13.196 0 4.393 2.342 8.247 6.292 8.247 3.282 0 5.855-2.586 5.855-6.06 0-3.243-2.342-5.820-5.463-5.820-0.654 0-1.308 0.13-1.832 0.26 0.784-3.372 3.782-6.715 7.173-8.247l-2.146-1.576zM25.355 6.417c-5.876 2.457-9.88 7.570-9.88 13.196 0 4.393 2.342 8.247 6.292 8.247 3.282 0 5.855-2.586 5.855-6.06 0-3.243-2.342-5.820-5.463-5.820-0.654 0-1.308 0.13-1.832 0.26 0.784-3.372 3.782-6.715 7.173-8.247l-2.146-1.576z"></path>
                         </svg>
                       </div>
-                      
+
                       {/* Quote */}
                       <blockquote className="text-gray-700 mb-6">{testimonial.quote}</blockquote>
-                      
+
                       {/* Author Info */}
                       <div className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3 overflow-hidden">
-                          <div className="text-sm font-bold text-gray-500">{testimonial.imagePlaceholder}</div>
-                          {/* Uncomment when images are available */}
-                          {/* <Image
-                            src={testimonial.image}
-                            alt={testimonial.author}
-                            fill
-                            style={{ objectFit: 'cover' }}
-                          /> */}
+                        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mr-3 overflow-hidden relative">
+                          {testimonial.industry === "Events" ? (
+                            <Image
+                              src={testimonial.image}
+                              alt={testimonial.author}
+                              fill
+                              style={{ objectFit: 'cover' }}
+                            />
+                          ) : (
+                            <div className="text-sm font-bold text-gray-500">{testimonial.imagePlaceholder}</div>
+                          )}
                         </div>
                         <div>
                           <h4 className="font-bold text-sm">{testimonial.author}</h4>
@@ -538,7 +554,7 @@ export default function TestimonialsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -547,7 +563,7 @@ export default function TestimonialsPage() {
             <p className="text-lg mb-8">
               I'd love to learn about your goals and how I can help your organization succeed.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
                 Explore Services

@@ -79,16 +79,14 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               {/* Placeholder for professional headshot */}
-              <div className="relative rounded-lg overflow-hidden shadow-xl h-[500px] bg-gray-200">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">Professional Headshot</div>
-                {/* Uncomment when image is available */}
-                {/* <Image 
-                  src="/images/joyce-headshot.jpg" 
-                  alt="Joyce - Professional Speaker and MC" 
+              <div className="relative rounded-lg overflow-hidden shadow-xl h-[500px]">
+                <Image
+                  src="/images/Bright Smart Pics/About/brightsmart-founder-joyce-watts.webp"
+                  alt="Joyce - Professional Speaker and MC"
                   fill
                   style={{ objectFit: 'cover' }}
                   priority
-                /> */}
+                />
               </div>
             </div>
 
@@ -335,18 +333,38 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="aspect-square bg-gray-200 rounded-lg overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">Photo {item}</div>
-                {/* Uncomment when images are available */}
-                {/* <Image 
-                  src={`/images/action-${item}.jpg`} 
-                  alt={`Joyce speaking at event ${item}`} 
-                  fill
-                  style={{ objectFit: 'cover' }}
-                /> */}
-              </div>
-            ))}
+            <div className="aspect-square rounded-lg overflow-hidden relative">
+              <Image
+                src="/images/Bright Smart Pics/About/photo-1627560985113-ab67e8031f40.webp"
+                alt="Joyce speaking at event"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div className="aspect-square rounded-lg overflow-hidden relative">
+              <Image
+                src="/images/Bright Smart Pics/About/photo-1670382417551-d2f1ee29aea4.webp"
+                alt="Joyce speaking at event"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div className="aspect-square rounded-lg overflow-hidden relative">
+              <Image
+                src="/images/Bright Smart Pics/About/photo-1686397140330-40f4c9919b58.webp"
+                alt="Joyce speaking at event"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+            <div className="aspect-square rounded-lg overflow-hidden relative">
+              <Image
+                src="/images/Bright Smart Pics/About/photo-1710360683896-e0506fb3579a.webp"
+                alt="Joyce speaking at event"
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
           </div>
         </div>
       </section>

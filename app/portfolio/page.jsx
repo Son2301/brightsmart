@@ -7,7 +7,7 @@ export default function PortfolioPage() {
       id: 1,
       title: "Past Events",
       description: "Explore my experience across corporate, government and industry events.",
-      image: "/images/portfolio/past-events-cover.jpg", // Placeholder
+      image: "/images/Bright Smart Pics/Portfolio/Past Events/photo-1585974738771-84483dd9f89f.webp",
       link: "/portfolio/past-events",
       imagePlaceholder: "Past Events Image"
     },
@@ -15,7 +15,7 @@ export default function PortfolioPage() {
       id: 2,
       title: "Testimonials",
       description: "Hear what clients and event organisers say about working with me.",
-      image: "/images/portfolio/testimonials-cover.jpg", // Placeholder
+      image: "/images/Bright Smart Pics/Portfolio/Testimonials/photo-1512314889357-e157c22f938d.webp",
       link: "/portfolio/testimonials",
       imagePlaceholder: "Testimonials Image"
     },
@@ -23,7 +23,7 @@ export default function PortfolioPage() {
       id: 3,
       title: "Media Kit",
       description: "Download professional resources for your event planning needs.",
-      image: "/images/portfolio/media-kit-cover.jpg", // Placeholder
+      image: "/images/Bright Smart Pics/Portfolio/Media Kit/ON stage speaking.webp",
       link: "/portfolio/media-kit",
       imagePlaceholder: "Media Kit Image"
     }
@@ -33,37 +33,37 @@ export default function PortfolioPage() {
     {
       id: 1,
       name: 'Mainstreet Australia',
-      logoPath: '/logos/mainstreet-australia.png'
+      logoPath: '/images/clientLogos/Mainstreet-Australia-logo.png'
     },
     {
       id: 2,
       name: 'Open House Melbourne',
-      logoPath: '/logos/open-house-melbourne.png'
+      logoPath: '/images/clientLogos/open-house.svg'
     },
     {
       id: 3,
       name: 'Merri-bek City Council',
-      logoPath: '/logos/merri-bek-council.png'
+      logoPath: '/images/clientLogos/Merri-bek_logo.png'
     },
     {
       id: 4,
       name: 'Maribyrnong City Council',
-      logoPath: '/logos/maribyrnong-council.png'
+      logoPath: '/images/clientLogos/Maribyrnong_city_council_logo.svg'
     },
     {
       id: 5,
       name: 'Melbourne Writers Festival',
-      logoPath: '/logos/melbourne-writers-festival.png'
+      logoPath: '/images/clientLogos/melbourne_writer_festival.png'
     },
     {
       id: 6,
       name: 'Footscray Traders Association',
-      logoPath: '/logos/footscray-traders.png'
+      logoPath: '/images/clientLogos/FootscrayTradersLogoAssn-Member.png'
     },
     {
       id: 7,
       name: 'Footscray Market',
-      logoPath: '/logos/footscray-market.png'
+      logoPath: '/images/clientLogos/Footscray+Market_Fresh+&+Cheap_Red_Small.png'
     }
   ];
 
@@ -93,15 +93,13 @@ export default function PortfolioPage() {
                 className="group block overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="relative h-64 bg-gray-200">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">{section.imagePlaceholder}</div>
-                  {/* Uncomment when images are available */}
-                  {/* <Image 
-                    src={section.image} 
-                    alt={section.title} 
+                  <Image
+                    src={section.image}
+                    alt={section.title}
                     fill
                     style={{ objectFit: 'cover' }}
                     className="transition-transform duration-500 group-hover:scale-105"
-                  /> */}
+                  />
                 </div>
                 <div className="p-6 bg-white">
                   <h3 className="text-2xl font-bold mb-2">{section.title}</h3>
@@ -122,24 +120,21 @@ export default function PortfolioPage() {
       {/* Trusted By Section */}
       <section className="py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h3 className="text-center text-sm uppercase tracking-wider text-gray-500 mb-8">Trusted By</h3>
+          <h3 className="text-center text-2xl font-semibold text-gray-700 mb-2">Trusted By</h3>
 
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 place-items-center max-w-6xl mx-auto">
             {organizations.map((org) => (
-              <div key={org.id} className="w-32 md:w-40 h-16 relative flex items-center justify-center">
-                {/* Replace with actual logos when available */}
-                <div className="w-full h-12 bg-gray-200 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
-                  <span className="text-xs text-gray-500">{org.name}</span>
+              <div key={org.id} className="flex items-center justify-center h-24 w-full">
+                <div className="relative w-full h-full max-w-[160px] max-h-[70px]">
+                  <Image
+                    src={org.logoPath}
+                    alt={org.name}
+                    fill
+                    sizes="160px"
+                    className="filter grayscale hover:grayscale-0 opacity-80 hover:opacity-100 transition-all duration-300"
+                    style={{ objectFit: 'contain' }}
+                  />
                 </div>
-
-                {/* When you have the logos, uncomment and use this: */}
-                {/* <Image
-                  src={org.logoPath}
-                  alt={org.name}
-                  width={140}
-                  height={60}
-                  className="filter grayscale opacity-70 hover:opacity-100 transition-opacity"
-                /> */}
               </div>
             ))}
           </div>

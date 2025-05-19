@@ -82,7 +82,7 @@ export default function ResourcesPage() {
       title: "10 Ways to Keep Your Audience Engaged During Virtual Events",
       excerpt: "Virtual events present unique challenges for engagement. Learn proven strategies to keep your audience actively participating.",
       date: "Oct 15, 2023",
-      image: "/images/blog/virtual-events.jpg",
+      image: "/images/Bright Smart Pics/Resources/photo-1712904116109-84cd03566be9.webp",
       imageAlt: "Person presenting at a virtual event",
       imagePlaceholder: "Virtual Event",
       slug: "keep-audience-engaged-virtual-events"
@@ -92,7 +92,7 @@ export default function ResourcesPage() {
       title: "The Art of MC'ing: How to Guide an Event Without Stealing the Show",
       excerpt: "Discover the delicate balance of being present enough to guide an event while ensuring speakers and content remain the focus.",
       date: "Sep 3, 2023",
-      image: "/images/blog/mc-guide.jpg",
+      image: "/images/Bright Smart Pics/Resources/photo-1523289333742-be1143f6b766.webp",
       imageAlt: "MC introducing a speaker on stage",
       imagePlaceholder: "MC on Stage",
       slug: "art-of-mcing"
@@ -102,7 +102,7 @@ export default function ResourcesPage() {
       title: "Event Planning Timeline: What to Do 6 Months Before Your Big Day",
       excerpt: "A step-by-step guide for event planners to ensure every detail is covered well in advance of your event.",
       date: "Aug 21, 2023",
-      image: "/images/blog/planning-timeline.jpg",
+      image: "/images/Bright Smart Pics/Resources/photo-1503428593586-e225b39bddfe.webp",
       imageAlt: "Event planning calendar and checklist",
       imagePlaceholder: "Planning Timeline",
       slug: "event-planning-timeline"
@@ -334,16 +334,12 @@ export default function ResourcesPage() {
                   className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer"
                 >
                   <div className="relative h-48 bg-gray-200">
-                    <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                      {post.imagePlaceholder}
-                    </div>
-                    {/* Uncomment when real images are available */}
-                    {/* <Image 
-                      src={post.image} 
-                      alt={post.imageAlt} 
-                      fill 
+                    <Image
+                      src={post.image}
+                      alt={post.imageAlt}
+                      fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    /> */}
+                    />
                   </div>
                   <div className="p-6">
                     <p className="text-sm text-gray-500 mb-2">{post.date}</p>

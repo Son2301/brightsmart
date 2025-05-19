@@ -129,15 +129,13 @@ export default function ServicesPage() {
 
             <div className="relative">
               {/* Placeholder for image */}
-              <div className="relative rounded-xl overflow-hidden shadow-xl h-[500px] bg-gray-200">
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">Service Image</div>
-                {/* Uncomment when image is available */}
-                {/* <Image 
-                  src="/images/services-hero.jpg" 
-                  alt="Joyce speaking at an event" 
+              <div className="relative rounded-xl overflow-hidden shadow-xl h-[500px]">
+                <Image
+                  src="/images/Bright Smart Pics/Services/Joyce-Watts-laughing-with-computer-768x512.webp"
+                  alt="Joyce speaking at an event"
                   fill
                   style={{ objectFit: 'cover' }}
-                /> */}
+                />
               </div>
 
               {/* Decorative elements */}

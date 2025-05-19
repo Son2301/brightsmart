@@ -3,147 +3,120 @@ import Image from 'next/image';
 
 export default function MediaKitPage() {
   const mediaCategories = [
-    { id: 'all', name: 'All Resources' },
-    { id: 'photos', name: 'Photos' },
-    { id: 'biographies', name: 'Biographies' },
-    { id: 'logos', name: 'Logos & Brand' }
+    { id: "photos", name: "Photos" },
+    { id: "logos", name: "Logos & Brand" },
+    { id: "bios", name: "Biographies" },
+    { id: "materials", name: "Event Materials" }
   ];
 
   const mediaResources = [
-    // Photos
     {
       id: 1,
       title: "Professional Headshot (Color)",
-      category: "photos",
       description: "High-resolution color headshot for event programs, websites, and promotional materials.",
-      thumbnail: "/images/media-kit/headshot-color-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-headshot-color.jpg", // Placeholder
-      fileType: "JPG",
-      fileSize: "5.2 MB",
-      dimensions: "3000 × 2000 px",
+      category: "photos",
+      fileType: "WEBP",
+      fileSize: "1.8 MB",
+      featured: true,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Prof headshot B&W.webp",
       thumbnailPlaceholder: "Headshot Preview",
-      featured: true
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Prof headshot B&W.webp"
     },
     {
       id: 2,
-      title: "Professional Headshot (B&W)",
+      title: "On-Stage Speaking Photo",
+      description: "Action shot from a recent keynote presentation, suitable for event promotion.",
       category: "photos",
-      description: "High-resolution black and white headshot for print materials and formal occasions.",
-      thumbnail: "/images/media-kit/headshot-bw-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-headshot-bw.jpg", // Placeholder
-      fileType: "JPG",
-      fileSize: "4.8 MB",
-      dimensions: "3000 × 2000 px",
-      thumbnailPlaceholder: "B&W Headshot Preview",
-      featured: false
+      fileType: "WEBP",
+      fileSize: "513 KB",
+      featured: true,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/ON stage speaking.webp",
+      thumbnailPlaceholder: "Speaking Photo Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/ON stage speaking.webp"
     },
     {
       id: 3,
-      title: "On-Stage Speaking Photo",
+      title: "Workshop Facilitation Photo",
+      description: "Photo showing workshop facilitation style, perfect for workshop promotion.",
       category: "photos",
-      description: "Action shot from a recent keynote presentation, suitable for event promotion.",
-      thumbnail: "/images/media-kit/speaking-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-speaking.jpg", // Placeholder
-      fileType: "JPG",
-      fileSize: "7.1 MB",
-      dimensions: "4000 × 2667 px",
-      thumbnailPlaceholder: "Speaking Photo Preview",
-      featured: true
+      fileType: "WEBP",
+      fileSize: "513 KB",
+      featured: false,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Workshop facilitation photo.webp",
+      thumbnailPlaceholder: "Workshop Photo Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Workshop facilitation photo.webp"
     },
     {
       id: 4,
-      title: "Workshop Facilitation Photo",
-      category: "photos",
-      description: "Photo showing facilitation style during a corporate workshop.",
-      thumbnail: "/images/media-kit/workshop-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-workshop.jpg", // Placeholder
-      fileType: "JPG",
-      fileSize: "6.5 MB",
-      dimensions: "3600 × 2400 px",
-      thumbnailPlaceholder: "Workshop Photo Preview",
-      featured: false
+      title: "Full Biography",
+      description: "Comprehensive professional biography suitable for conference programs and detailed introductions.",
+      category: "bios",
+      fileType: "WEBP",
+      fileSize: "2.9 MB",
+      featured: true,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Full bio.webp",
+      thumbnailPlaceholder: "Full Bio Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Full bio.webp"
     },
-
-    // Biographies
     {
       id: 5,
-      title: "Full Biography (500 words)",
-      category: "biographies",
-      description: "Comprehensive professional biography suitable for conference programs and detailed introductions.",
-      thumbnail: "/images/media-kit/full-bio-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-full-biography.pdf", // Placeholder
-      fileType: "PDF",
-      fileSize: "320 KB",
-      pages: "1 page",
-      thumbnailPlaceholder: "Full Bio Preview",
-      featured: true
+      title: "Short Biography",
+      description: "Concise professional biography for event listings and brief introductions.",
+      category: "bios",
+      fileType: "WEBP",
+      fileSize: "392 KB",
+      featured: false,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Short bio.webp",
+      thumbnailPlaceholder: "Short Bio Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Short bio.webp"
     },
     {
       id: 6,
-      title: "Short Biography (250 words)",
-      category: "biographies",
-      description: "Concise professional biography for websites and shorter program listings.",
-      thumbnail: "/images/media-kit/short-bio-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-short-biography.pdf", // Placeholder
-      fileType: "PDF",
-      fileSize: "280 KB",
-      pages: "1 page",
-      thumbnailPlaceholder: "Short Bio Preview",
-      featured: false
+      title: "Brief Introduction",
+      description: "Very brief introduction text for use in programs or quick introductions.",
+      category: "bios",
+      fileType: "WEBP",
+      fileSize: "269 KB",
+      featured: false,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Brief intro.webp",
+      thumbnailPlaceholder: "Brief Intro Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Brief intro.webp"
     },
     {
       id: 7,
-      title: "Brief Introduction (100 words)",
-      category: "biographies",
-      description: "Brief introduction text for MCs and event hosts to use when introducing me.",
-      thumbnail: "/images/media-kit/intro-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-introduction.pdf", // Placeholder
-      fileType: "PDF",
-      fileSize: "240 KB",
-      pages: "1 page",
-      thumbnailPlaceholder: "Intro Preview",
-      featured: false
+      title: "Primary Logo (Color)",
+      description: "Official full-color logo for use on white or light backgrounds.",
+      category: "logos",
+      fileType: "WEBP",
+      fileSize: "586 KB",
+      featured: true,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Primary logo (color).webp",
+      thumbnailPlaceholder: "Color Logo Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Primary logo (color).webp"
     },
-
-    // Logos and Brand
     {
       id: 8,
-      title: "Primary Logo (Full Color)",
+      title: "Primary Logo (Monochrome)",
+      description: "Monochrome version of the logo for use on colored backgrounds or special applications.",
       category: "logos",
-      description: "Official full-color logo for use on white or light backgrounds.",
-      thumbnail: "/images/media-kit/logo-color-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-logo-color.zip", // Placeholder
-      fileType: "ZIP",
-      fileSize: "1.8 MB",
-      formats: "AI, EPS, PNG, SVG",
-      thumbnailPlaceholder: "Logo Preview",
-      featured: true
+      fileType: "WEBP",
+      fileSize: "403 KB",
+      featured: false,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Primary logo monochrome.webp",
+      thumbnailPlaceholder: "Monochrome Logo Preview",
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Primary logo monochrome.webp"
     },
     {
       id: 9,
-      title: "Primary Logo (Monochrome)",
-      category: "logos",
-      description: "Monochrome version of the logo for use on colored backgrounds or print materials.",
-      thumbnail: "/images/media-kit/logo-mono-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-logo-mono.zip", // Placeholder
-      fileType: "ZIP",
-      fileSize: "1.5 MB",
-      formats: "AI, EPS, PNG, SVG",
-      thumbnailPlaceholder: "Mono Logo Preview",
-      featured: false
-    },
-    {
-      id: 10,
       title: "Brand Style Guide",
+      description: "Comprehensive guide for using brand assets correctly in your promotional materials.",
       category: "logos",
-      description: "Complete brand guidelines including color palette, typography, and logo usage.",
-      thumbnail: "/images/media-kit/style-guide-thumb.jpg", // Placeholder
-      downloadUrl: "/downloads/nicole-smith-brand-guide.pdf", // Placeholder
-      fileType: "PDF",
-      fileSize: "3.2 MB",
-      pages: "12 pages",
+      fileType: "WEBP",
+      fileSize: "738 KB",
+      featured: false,
+      thumbnail: "/images/Bright Smart Pics/Portfolio/Media Kit/Brand style guide.webp",
       thumbnailPlaceholder: "Style Guide Preview",
-      featured: false
+      downloadUrl: "/images/Bright Smart Pics/Portfolio/Media Kit/Brand style guide.webp"
     }
   ];
 
@@ -221,17 +194,13 @@ export default function MediaKitPage() {
               <div key={resource.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow group">
                 {/* Thumbnail */}
                 <div className="relative h-48 bg-gray-200">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    {resource.thumbnailPlaceholder}
-                  </div>
-                  {/* Uncomment when images are available */}
-                  {/* <Image 
-                    src={resource.thumbnail} 
-                    alt={resource.title} 
+                  <Image
+                    src={resource.thumbnail}
+                    alt={resource.title}
                     fill
                     style={{ objectFit: 'cover' }}
                     className="transition-transform duration-500 group-hover:scale-105"
-                  /> */}
+                  />
 
                   {/* Category badge */}
                   <div className="absolute top-3 left-3">
@@ -315,16 +284,12 @@ export default function MediaKitPage() {
               <div key={resource.id} className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
                 {/* Thumbnail */}
                 <div className="relative h-40 bg-gray-200">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    {resource.thumbnailPlaceholder}
-                  </div>
-                  {/* Uncomment when images are available */}
-                  {/* <Image 
-                    src={resource.thumbnail} 
-                    alt={resource.title} 
+                  <Image
+                    src={resource.thumbnail}
+                    alt={resource.title}
                     fill
                     style={{ objectFit: 'cover' }}
-                  /> */}
+                  />
 
                   {/* Category badge */}
                   <div className="absolute top-2 right-2">
