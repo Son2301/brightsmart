@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { FaTwitter, FaFacebook, FaInstagram, FaLinkedin, FaChevronDown } from 'react-icons/fa';
 import MobileMenu from './MobileMenu';
@@ -20,10 +21,13 @@ export default function Navbar() {
     <header className="bg-primary py-4">
       <div className="container mx-auto flex justify-between items-center px-4">
         <Link href="/" className="text-white font-bold">
-          <div className="text-center">
-            <span className="text-3xl font-light block">bright</span>
-            <span className="text-3xl font-semibold tracking-wider block mt-[-10px]">SMART</span>
-          </div>
+          <Image
+            src="/images/logo_trans.png"
+            alt="BrightSmart Logo"
+            width={150}
+            height={60}
+            priority
+          />
         </Link>
 
         <div className="flex items-center">

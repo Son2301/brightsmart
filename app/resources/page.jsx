@@ -8,6 +8,8 @@ import NewsletterPopup from '../components/NewsletterPopup';
 export default function ResourcesPage() {
   // State for newsletter popup
   const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+  // State to control how many resources to show
+  const [showAllResources, setShowAllResources] = useState(false);
 
   // Media Kit Resources
   const mediaKitResources = [
@@ -135,7 +137,43 @@ export default function ResourcesPage() {
       title: "Sample Event Agenda Template",
       description: "A flexible agenda template you can customize for any type of event.",
       icon: "📋",
-      downloadSlug: "event-agenda-template"
+      downloadSlug: "event-agenda-template",
+      hidden: true
+    },
+    {
+      id: 5,
+      title: "Event Budget Calculator",
+      description: "A practical tool to help you manage your event budget effectively.",
+      icon: "💰",
+      downloadSlug: "event-budget-calculator"
+    },
+    {
+      id: 6,
+      title: "Virtual Event Checklist",
+      description: "Essential items to consider when planning and hosting virtual events.",
+      icon: "💻",
+      downloadSlug: "virtual-event-checklist"
+    },
+    {
+      id: 7,
+      title: "Post-Event Evaluation Form",
+      description: "Gather valuable feedback to improve your future events.",
+      icon: "📊",
+      downloadSlug: "post-event-evaluation"
+    },
+    {
+      id: 8,
+      title: "Speaker Marketing Kit",
+      description: "Templates to help promote speakers before your event.",
+      icon: "📢",
+      downloadSlug: "speaker-marketing-kit"
+    },
+    {
+      id: 9,
+      title: "Event Emergency Plan",
+      description: "Be prepared for unexpected situations with this comprehensive plan.",
+      icon: "🚨",
+      downloadSlug: "event-emergency-plan"
     }
   ];
 
@@ -229,26 +267,37 @@ export default function ResourcesPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {freeResources.map((resource) => (
-                <div key={resource.id} className="bg-white rounded-lg shadow p-6 flex flex-col h-full">
-                  <div className="text-4xl mb-4">{resource.icon}</div>
-                  <h3 className="text-xl font-bold mb-3">{resource.title}</h3>
-                  <p className="text-gray-600 mb-6 flex-grow">{resource.description}</p>
-                  <button
-                    onClick={() => alert('Resource download feature coming soon!')}
-                    className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors text-sm"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    Get This Resource
-                  </button>
-                </div>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {freeResources
+                .filter(resource => !resource.hidden)
+                .slice(0, showAllResources ? 9 : 3)
+                .map((resource) => (
+                  <div key={resource.id} className="bg-white rounded-lg shadow p-6 flex flex-col h-full">
+                    <div className="text-4xl mb-4">{resource.icon}</div>
+                    <h3 className="text-xl font-bold mb-3">{resource.title}</h3>
+                    <p className="text-gray-600 mb-6 flex-grow">{resource.description}</p>
+                    <button
+                      onClick={() => alert('Resource download feature coming soon!')}
+                      className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors text-sm"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      Grab This Resource
+                    </button>
+                  </div>
+                ))}
             </div>
 
             <div className="flex flex-wrap justify-center gap-4">
+              {!showAllResources && (
+                <button
+                  onClick={() => setShowAllResources(true)}
+                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+                >
+                  Show More Resources
+                </button>
+              )}
               <button
                 onClick={() => alert('Resources download feature coming soon!')}
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
