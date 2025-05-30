@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#e83e8c', // Pink/magenta primary color
+        primary: '#ec005f', // Pink/magenta primary color
         accent: '#ffc107', // Yellow accent
       },
       animation: {

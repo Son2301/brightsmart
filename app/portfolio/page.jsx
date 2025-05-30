@@ -150,7 +150,7 @@ export default function PortfolioPage() {
               Let's discuss how I can help bring your vision to life and create an exceptional experience for your audience.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+            <Link href="/contact" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
               Get In Touch
             </Link>
           </div>

@@ -155,7 +155,7 @@ export default function ServicesPage() {
               Let's discuss how I can help make your next gathering truly memorable.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+            <Link href="/contact" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
               Request Your Free Consultation
             </Link>
           </div>

@@ -34,7 +34,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 mt-8">
             <Link href="/contact" className="group relative inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
               <span className="relative z-10">Request a Free Consultation</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-primary to-pink-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
+              <span className="absolute inset-0 bg-gradient-to-r from-primary to-[#c40050] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></span>
             </Link>
 
             <Link href="/about" className="inline-flex items-center justify-center px-8 py-4 font-medium text-white border-2 border-white rounded-md hover:bg-white/10 transition-colors">

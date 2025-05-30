@@ -244,7 +244,7 @@ export default function ResourcesPage() {
                     </div>
                     <button
                       onClick={() => alert('Resource download coming soon!')}
-                      className="w-full inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+                      className="w-full inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors"
                     >
                       Download
                     </button>
@@ -278,7 +278,7 @@ export default function ResourcesPage() {
                     <p className="text-gray-600 mb-6 flex-grow">{resource.description}</p>
                     <button
                       onClick={() => alert('Resource download feature coming soon!')}
-                      className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors text-sm"
+                      className="inline-flex items-center justify-center px-4 py-2 bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors text-sm"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -293,14 +293,14 @@ export default function ResourcesPage() {
               {!showAllResources && (
                 <button
                   onClick={() => setShowAllResources(true)}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors"
                 >
                   Show More Resources
                 </button>
               )}
               <button
                 onClick={() => alert('Resources download feature coming soon!')}
-                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors"
               >
                 Get All Free Resources
               </button>
@@ -375,7 +375,7 @@ export default function ResourcesPage() {
             </p>
             <button
               onClick={() => setIsNewsletterOpen(true)}
-              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-md hover:bg-pink-600 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-md hover:bg-primary-dark transition-colors"
             >
               Get Free Updates
             </button>

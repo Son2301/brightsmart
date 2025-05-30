@@ -300,7 +300,7 @@ export default function MCServicesPage() {
                 </p>
 
                 <div className="mt-8">
-                  <Link href="/contact" className="inline-flex items-center justify-center w-full px-6 py-3 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+                  <Link href="/contact" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                     Request a Quote
                   </Link>
                 </div>
@@ -342,7 +342,7 @@ export default function MCServicesPage() {
               Let's discuss how I can help make your event more connected, inclusive, and memorable.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+            <Link href="/contact" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
               Book Me As Your MC
             </Link>
           </div>

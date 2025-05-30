@@ -104,7 +104,7 @@ export default function About() {
                 In a white-male dominated space, I bring a fresh perspective as a woman, migrant and person of colour owning a media company. This unique lens allows me to create inclusive experiences that resonate with everyone in the room.
               </p>
 
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                 Schedule Your Free Call
               </Link>
             </div>
@@ -316,7 +316,7 @@ export default function About() {
                 Get My Speaker One-Sheet
               </Link>
 
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                 Start Planning Your Event
               </Link>
             </div>

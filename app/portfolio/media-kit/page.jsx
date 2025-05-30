@@ -262,7 +262,7 @@ export default function MediaKitPage() {
                   {/* Download button */}
                   <a
                     href={resource.downloadUrl}
-                    className="block w-full py-3 text-center bg-primary text-white font-medium rounded-md hover:bg-pink-600 transition-colors"
+                    className="block w-full py-3 text-center bg-primary text-white font-medium rounded-md hover:bg-primary-dark transition-colors"
                     download
                   >
                     Download
@@ -328,7 +328,7 @@ export default function MediaKitPage() {
               If you need custom materials or have specific requirements for your event or publication, please get in touch.
             </p>
 
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
               Contact Me
             </Link>
           </div>

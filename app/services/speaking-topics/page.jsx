@@ -96,7 +96,7 @@ export default function SpeakingTopicsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Introduction Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -104,25 +104,25 @@ export default function SpeakingTopicsPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">My Approach to Speaking</h2>
               <p className="text-lg mb-6">
-                I believe talks should do more than just inspire momentary enthusiasm—they should 
+                I believe talks should do more than just inspire momentary enthusiasm—they should
                 equip your audience with new perspectives and practical strategies they can apply immediately.
               </p>
               <p className="text-lg mb-6">
-                Drawing from my 15+ years in media and my experience as a woman of color building a 
-                successful brand in a challenging landscape, my talks blend personal storytelling, 
+                Drawing from my 15+ years in media and my experience as a woman of color building a
+                successful brand in a challenging landscape, my talks blend personal storytelling,
                 research-backed insights, and actionable frameworks.
               </p>
               <p className="text-lg mb-6">
-                Each presentation is customized to your specific audience and objectives, ensuring 
+                Each presentation is customized to your specific audience and objectives, ensuring
                 relevant content that resonates with your particular context.
               </p>
             </div>
-            
+
             <div>
               {/* Outcomes Box */}
               <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-primary">
                 <h3 className="text-xl font-bold mb-6">Speaking Engagement Benefits</h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 text-primary">
@@ -135,7 +135,7 @@ export default function SpeakingTopicsPage() {
                       <p className="text-gray-600">Thoughtfully researched content delivered with engaging storytelling and clear, actionable takeaways.</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 text-primary">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -147,7 +147,7 @@ export default function SpeakingTopicsPage() {
                       <p className="text-gray-600">Inspired attendees who leave with specific tools and strategies they can implement immediately.</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 text-primary">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -165,7 +165,7 @@ export default function SpeakingTopicsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Video Sample Section (placeholder) */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -176,7 +176,7 @@ export default function SpeakingTopicsPage() {
                 Watch samples of my speaking style and approach.
               </p>
             </div>
-            
+
             <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden relative">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
@@ -189,7 +189,7 @@ export default function SpeakingTopicsPage() {
                   <p className="text-gray-500">Speaking sample video</p>
                 </div>
               </div>
-              
+
               {/* Uncomment when video is available */}
               {/* <iframe 
                 className="absolute inset-0 w-full h-full"
@@ -203,7 +203,7 @@ export default function SpeakingTopicsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Speaking Topics */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -214,14 +214,14 @@ export default function SpeakingTopicsPage() {
                 Each talk can be customized to your audience's specific needs and delivered as a keynote, workshop, or panel.
               </p>
             </div>
-            
+
             <div className="space-y-20">
               {speakingTopics.map((topic) => (
                 <div key={topic.id} className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
                   <div>
                     <h3 className="text-2xl font-bold mb-4">{topic.title}</h3>
                     <p className="text-gray-700 mb-6">{topic.description}</p>
-                    
+
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold mb-2">Key Takeaways</h4>
                       <ul className="space-y-2">
@@ -233,23 +233,23 @@ export default function SpeakingTopicsPage() {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className="mb-6">
                       <h4 className="text-lg font-semibold mb-2">Ideal For</h4>
                       <p className="text-gray-600">{topic.audience}</p>
                     </div>
-                    
+
                     <div>
                       <h4 className="text-lg font-semibold mb-2">Customization</h4>
                       <p className="text-gray-600">{topic.customization}</p>
                     </div>
                   </div>
-                  
+
                   <div>
                     {/* Outcomes Box */}
                     <div className="bg-gray-50 p-6 rounded-xl shadow-sm">
                       <h4 className="font-bold mb-4 text-lg">Outcomes</h4>
-                      
+
                       <div className="space-y-4">
                         <div className="flex items-start">
                           <div className="flex-shrink-0 mt-1 text-primary">
@@ -261,7 +261,7 @@ export default function SpeakingTopicsPage() {
                             <p className="text-gray-700">Attendees gain practical tools and strategies they can implement immediately</p>
                           </div>
                         </div>
-                        
+
                         <div className="flex items-start">
                           <div className="flex-shrink-0 mt-1 text-primary">
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -272,7 +272,7 @@ export default function SpeakingTopicsPage() {
                             <p className="text-gray-700">Fresh perspectives on challenges your organization may be facing</p>
                           </div>
                         </div>
-                        
+
                         <div className="flex items-start">
                           <div className="flex-shrink-0 mt-1 text-primary">
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -285,7 +285,7 @@ export default function SpeakingTopicsPage() {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Placeholder for topic image */}
                     <div className="mt-6 rounded-xl overflow-hidden bg-gray-200 aspect-video relative">
                       <div className="absolute inset-0 flex items-center justify-center text-gray-500">Topic Image</div>
@@ -304,7 +304,7 @@ export default function SpeakingTopicsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -315,7 +315,7 @@ export default function SpeakingTopicsPage() {
                 What organizers and audiences say about my speaking engagements.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="bg-white p-8 rounded-lg shadow-sm">
@@ -331,7 +331,7 @@ export default function SpeakingTopicsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-primary/10">
         <div className="container mx-auto px-4">
@@ -340,13 +340,13 @@ export default function SpeakingTopicsPage() {
             <p className="text-lg mb-8">
               Let's discuss how my talks can bring value to your audience and organization.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/downloads/joyce-speaker-onesheet.pdf" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-white text-primary border-2 border-primary rounded-md hover:bg-primary/5 transition-colors">
                 Download Speaker One-Sheet
               </Link>
-              
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+
+              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                 Inquire About Speaking
               </Link>
             </div>

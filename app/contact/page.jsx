@@ -224,7 +224,7 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-pink-600 transition-colors flex items-center justify-center"
+                  className="w-full bg-primary text-white font-semibold py-3 px-6 rounded-md hover:bg-primary-dark transition-colors flex items-center justify-center"
                 >
                   <FaPaperPlane className="mr-2" />
                   Let's Talk About Your Event

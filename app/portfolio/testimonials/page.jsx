@@ -565,7 +565,7 @@ export default function TestimonialsPage() {
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
-              <Link href="/services" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+              <Link href="/services" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                 Explore Services
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-white border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors">

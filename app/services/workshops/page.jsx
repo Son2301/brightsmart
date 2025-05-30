@@ -64,7 +64,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Introduction Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -72,27 +72,27 @@ export default function WorkshopsPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">My Workshop Approach</h2>
               <p className="text-lg mb-6">
-                Too many workshops leave participants feeling temporarily inspired but without 
-                concrete skills to implement. My workshops are different—they're designed to create 
-                lasting change through practical frameworks, hands-on exercises, and custom 
+                Too many workshops leave participants feeling temporarily inspired but without
+                concrete skills to implement. My workshops are different—they're designed to create
+                lasting change through practical frameworks, hands-on exercises, and custom
                 implementation plans.
               </p>
               <p className="text-lg mb-6">
-                Drawing from my 15+ years in media, I bring real-world experience and proven 
-                techniques that participants can immediately apply to their work. Each workshop 
+                Drawing from my 15+ years in media, I bring real-world experience and proven
+                techniques that participants can immediately apply to their work. Each workshop
                 is highly interactive, with opportunities for practice, feedback, and personalization.
               </p>
               <p className="text-lg mb-6">
-                All workshops can be customized to your organization's specific context, challenges, 
+                All workshops can be customized to your organization's specific context, challenges,
                 and goals—ensuring relevance and maximum impact for your team.
               </p>
             </div>
-            
+
             <div>
               {/* Outcomes Box */}
               <div className="bg-gray-50 p-8 rounded-xl border-l-4 border-primary">
                 <h3 className="text-xl font-bold mb-6">Workshop Benefits</h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 text-primary">
@@ -105,7 +105,7 @@ export default function WorkshopsPage() {
                       <p className="text-gray-600">Highly interactive sessions with concrete tools, frameworks, and practice opportunities, not just theory.</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 text-primary">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -117,7 +117,7 @@ export default function WorkshopsPage() {
                       <p className="text-gray-600">Immediate confidence and capability improvement, with practical skills that can be applied right away.</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start">
                     <div className="flex-shrink-0 mt-1 text-primary">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -135,7 +135,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Workshop Format Options */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -146,7 +146,7 @@ export default function WorkshopsPage() {
                 All workshops can be delivered in formats that work for your team's needs.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-lg shadow-sm text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
@@ -159,7 +159,7 @@ export default function WorkshopsPage() {
                   Immersive, high-energy sessions with maximum interaction and personalized feedback. Ideal for team building and complex skill development.
                 </p>
               </div>
-              
+
               <div className="bg-white p-8 rounded-lg shadow-sm text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                   <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -171,7 +171,7 @@ export default function WorkshopsPage() {
                   Highly engaging online sessions designed specifically for the virtual environment. Includes breakout rooms, digital collaboration tools, and varied activities.
                 </p>
               </div>
-              
+
               <div className="bg-white p-8 rounded-lg shadow-sm text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
                   <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -187,7 +187,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Workshop Offerings */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -198,7 +198,7 @@ export default function WorkshopsPage() {
                 Each workshop can be customized to your organization's specific needs and challenges.
               </p>
             </div>
-            
+
             <div className="space-y-20">
               {workshops.map((workshop) => (
                 <div key={workshop.id} className="bg-white border border-gray-100 rounded-xl overflow-hidden shadow-sm">
@@ -206,14 +206,14 @@ export default function WorkshopsPage() {
                     <h3 className="text-2xl font-bold mb-2">{workshop.title}</h3>
                     <p className="text-gray-700">{workshop.description}</p>
                   </div>
-                  
+
                   <div className="p-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div>
                         {/* Workshop Outcomes Box */}
                         <div className="bg-gray-50 p-6 rounded-xl mb-8">
                           <h4 className="font-bold mb-4 text-lg">Outcomes</h4>
-                          
+
                           <div className="space-y-3">
                             {workshop.outcomes.map((outcome, idx) => (
                               <div key={idx} className="flex items-start">
@@ -229,14 +229,14 @@ export default function WorkshopsPage() {
                             ))}
                           </div>
                         </div>
-                        
+
                         {/* Workshop Materials */}
                         <div>
                           <h4 className="text-lg font-semibold mb-3">Materials Provided</h4>
                           <p className="text-gray-600">{workshop.materials}</p>
                         </div>
                       </div>
-                      
+
                       <div>
                         <div className="space-y-6">
                           {/* Format Options */}
@@ -251,7 +251,7 @@ export default function WorkshopsPage() {
                               ))}
                             </ul>
                           </div>
-                          
+
                           {/* Duration Options */}
                           <div>
                             <h4 className="text-lg font-semibold mb-3">Duration Options</h4>
@@ -264,7 +264,7 @@ export default function WorkshopsPage() {
                               ))}
                             </ul>
                           </div>
-                          
+
                           {/* Audience Size */}
                           <div>
                             <h4 className="text-lg font-semibold mb-3">Ideal Audience Size</h4>
@@ -280,7 +280,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Custom Workshop Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -291,12 +291,12 @@ export default function WorkshopsPage() {
                 Don't see exactly what you need? I can develop custom workshops tailored to your specific challenges.
               </p>
             </div>
-            
+
             <div className="bg-white p-8 rounded-xl shadow-sm">
               <p className="text-lg mb-6">
                 Drawing from my 15+ years of media experience, I can develop specialized workshops for your organization's unique needs. Popular custom topics include:
               </p>
-              
+
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
                   <span className="flex-shrink-0 text-primary mr-2">•</span>
@@ -315,13 +315,13 @@ export default function WorkshopsPage() {
                   <span className="text-gray-700"><strong>Audience Engagement</strong> - Strategies for deeper connection with your specific audience segments</span>
                 </li>
               </ul>
-              
+
               <p className="text-gray-600 mb-8">
                 The custom workshop development process typically includes needs assessment, learning objective development, content creation, and delivery—all with ongoing collaboration to ensure the final workshop meets your specific goals.
               </p>
-              
+
               <div className="text-center">
-                <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+                <Link href="/contact" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
                   Inquire About Custom Workshops
                 </Link>
               </div>
@@ -329,7 +329,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Testimonial Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -338,14 +338,14 @@ export default function WorkshopsPage() {
               <span className="text-primary font-semibold">TESTIMONIAL</span>
               <h2 className="text-3xl font-bold mt-2 mb-8">What Participants Say</h2>
             </div>
-            
+
             <div className="bg-gray-50 p-10 rounded-xl relative">
               <div className="text-primary text-8xl absolute top-4 left-6 opacity-20">"</div>
               <div className="relative z-10">
                 <p className="text-xl text-gray-700 italic mb-8">
-                  Joyce's media training workshop transformed how our team approaches communication. Her hands-on approach, 
-                  practical frameworks, and personalized feedback gave everyone concrete skills they could apply immediately. 
-                  Three months later, we're still using the techniques she taught us, and we've seen measurable improvements 
+                  Joyce's media training workshop transformed how our team approaches communication. Her hands-on approach,
+                  practical frameworks, and personalized feedback gave everyone concrete skills they could apply immediately.
+                  Three months later, we're still using the techniques she taught us, and we've seen measurable improvements
                   in our media coverage and audience engagement.
                 </p>
                 <div className="flex items-center">
@@ -369,7 +369,7 @@ export default function WorkshopsPage() {
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
       <section className="py-16 bg-primary/10">
         <div className="container mx-auto px-4">
@@ -378,8 +378,8 @@ export default function WorkshopsPage() {
             <p className="text-lg mb-8">
               Let's discuss how my workshops can help your team develop practical skills that create lasting impact.
             </p>
-            
-            <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 font-medium bg-primary text-white rounded-md hover:bg-pink-600 transition-colors">
+
+            <Link href="/contact" className="inline-block px-8 py-3 bg-primary text-white rounded-md hover:bg-primary-dark transition-colors">
               Inquire About Workshops
             </Link>
           </div>
