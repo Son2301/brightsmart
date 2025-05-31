@@ -4,8 +4,8 @@ import Footer from './components/Footer';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Bright Smart - Digital Marketing Specialist',
-  description: 'Helping businesses attract the right clients and get more sales with SEO, email marketing, and social media strategies.',
+  title: 'Joyce Watts - Professional MC & Speaker | Bright Smart',
+  description: 'Joyce Watts brings warmth, expertise and inclusivity to every stage. Professional MC services, keynote speaking, and workshops for events across Australia.',
 };
 
 export default function RootLayout({ children }) {

@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="container mx-auto relative z-10 h-[90vh] flex items-end pb-20">
         <div className="max-w-3xl">
           <h1 className="mb-2">
-            <span className="text-4xl md:text-5xl font-bold text-primary">Your Name</span>
+            <span className="text-4xl md:text-5xl font-bold text-primary">Joyce Watts</span>
             <span className="text-4xl md:text-5xl font-bold text-white block mt-1">Australia's leading MC</span>
           </h1>
 
